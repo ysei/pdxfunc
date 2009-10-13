@@ -3,12 +3,12 @@ degree p = length normalize p
 
 
 -- normalize function: removes leading zeroes
-
+normalize :: [Number] -> [Number]
 normalize [] = []
 normalize 0::x = normalize x
 normalize x = x
 
-
+pld :: [Number] -> [Number] -> ([Number],[Number])
 pld _ []	= ([1/0], [1/0])
 pld [] _	= ([],[])
 pld n::ns d::ds
