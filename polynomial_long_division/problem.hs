@@ -17,5 +17,12 @@ pld n::ns d::ds
 								 	r0	= detract n::ns q0 d::ds
 									(q1, r1)	= pld r0 d::ds
 								in	(q0::q1, r1)
--- TODO
--- add a polynomial_long_division that calls pld sanitized on input (normalize)
+
+detract :: [Number] -> Number -> [Number] -> [Number]
+detract n _ []	=	n
+detract [] q d::ds	=	(-q * d)::(detract [] q ds)
+
+product :: [Number] -> Number -> [Number]
+product	[] _	=	[]
+product p::ps s	=	(s * p)::(product ps s)
+
